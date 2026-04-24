@@ -1,0 +1,78 @@
+/**
+ * Primitive tokens — raw scales, no meaning.
+ *
+ * Do NOT reference these from components. Components must use semantic tokens
+ * (see tokens-semantic.css). These exist only so semantic tokens have a
+ * single source of truth to point at.
+ */
+
+:root {
+  /* ============================================================
+   * COLOR — primitive palette
+   * ============================================================ */
+
+  /* Neutral scale (dark → light). Names reflect visual appearance. */
+  --palette-neutral-900: #211922; /* plum-black */
+  --palette-neutral-700: #62625b; /* olive-gray */
+  --palette-neutral-500: #91918c; /* warm-silver */
+  --palette-neutral-300: #e5e5e0; /* sand-gray */
+  --palette-neutral-200: #e0e0d9; /* warm-light */
+  --palette-neutral-100: #f6f6f3; /* fog */
+  --palette-neutral-0:   #ffffff;
+
+  /* Brand (pinterest-red family) */
+  --palette-brand-500: #e60023;
+  --palette-brand-50:  #fef2f2;
+
+  /* Status */
+  --palette-success-700: #103c25;
+  --palette-success-100: rgba(16, 60, 37, 0.08);   /* #103c2514 */
+  --palette-danger-100:  rgba(230, 0, 35, 0.08);   /* #e6002314 */
+
+  /* Accents — used for status text/links only, not branding */
+  --palette-accent-blue-500:   #2b48d4;
+  --palette-accent-purple-500: #6845ab;
+
+  /* Pastel tag palette — category chips in feed / mypage */
+  --palette-tag-blue:   #c4d4e8;
+  --palette-tag-green:  #c4e8d8;
+  --palette-tag-lime:   #d4e8c4;
+  --palette-tag-purple: #d8c4e8;
+  --palette-tag-pink:   #e8c4d4;
+  --palette-tag-peach:  #e8d5c4;
+
+  /* Overlays */
+  --palette-overlay-strong: rgba(0, 0, 0, 0.5);
+  --palette-overlay-medium: rgba(0, 0, 0, 0.4);
+  --palette-overlay-soft:   rgba(0, 0, 0, 0.08);
+  --palette-overlay-white:  rgba(255, 255, 255, 0.85);
+
+  /* ============================================================
+   * SPACING — 4-base scale
+   * ============================================================ */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ============================================================
+   * RADIUS
+   * ============================================================ */
+  --radius-none: 0;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   20px;
+  --radius-full: 9999px;
+
+  /* ============================================================
+   * SHADOW
+   * ============================================================ */
+  --shadow-card-raw: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

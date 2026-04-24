@@ -2,18 +2,18 @@
 
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from "react";
 
-interface User {
+export interface AuthUser {
   id: number;
   email: string;
   name: string;
   profile_image: string | null;
   credits: number;
   is_admin: number;
-  created_at: string;
+  created_at?: string;
 }
 
-interface AuthContextType {
-  user: User | null;
+export interface AuthContextType {
+  user: AuthUser | null;
   loading: boolean;
   login: (email: string, password: string) => Promise<{ ok: boolean; error?: string }>;
   signup: (email: string, password: string, name: string) => Promise<{ ok: boolean; error?: string }>;
@@ -21,10 +21,10 @@ interface AuthContextType {
   refresh: () => Promise<void>;
 }
 
-const AuthContext = createContext<AuthContextType | null>(null);
+export const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<AuthUser | null>(null);
   const [loading, setLoading] = useState(true);
 
   const refresh = useCallback(async () => {

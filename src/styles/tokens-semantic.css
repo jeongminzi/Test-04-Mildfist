@@ -1,0 +1,90 @@
+/**
+ * Semantic tokens — role-bound, reference primitives only.
+ *
+ * Components must use these utilities (bg-surface, text-primary, rounded-card…),
+ * NEVER primitive tokens and NEVER arbitrary hex values.
+ *
+ * Tailwind v4 reads `@theme` and emits matching utility classes:
+ *   --color-bg-surface     → bg-surface, text-surface, border-surface
+ *   --radius-card          → rounded-card
+ *   --shadow-card          → shadow-card
+ *   --spacing-component-md → p-component-md, gap-component-md, …
+ */
+
+@theme {
+  /* ============================================================
+   * COLOR — surfaces
+   * ============================================================ */
+  --color-bg-surface:   var(--palette-neutral-0);
+  --color-bg-muted:     var(--palette-neutral-100);
+  --color-bg-subtle:    var(--palette-neutral-200);
+  --color-bg-inverse:   var(--palette-neutral-900);
+
+  /* Brand surfaces */
+  --color-bg-brand:         var(--palette-brand-500);
+  --color-bg-brand-muted:   var(--palette-brand-50);
+
+  /* Status surfaces */
+  --color-bg-danger-muted:  var(--palette-danger-100);
+  --color-bg-success-muted: var(--palette-success-100);
+
+  /* Overlays / scrims */
+  --color-bg-overlay:       var(--palette-overlay-strong);
+  --color-bg-overlay-soft:  var(--palette-overlay-medium);
+  --color-bg-scrim:         var(--palette-overlay-white);
+
+  /* ============================================================
+   * COLOR — text
+   * ============================================================ */
+  --color-text-primary:    var(--palette-neutral-900);
+  --color-text-secondary:  var(--palette-neutral-700);
+  --color-text-tertiary:   var(--palette-neutral-500);
+  --color-text-on-brand:   var(--palette-neutral-0);
+  --color-text-brand:      var(--palette-brand-500);
+  --color-text-success:    var(--palette-success-700);
+  --color-text-link:       var(--palette-accent-blue-500);
+
+  /* ============================================================
+   * COLOR — borders
+   * ============================================================ */
+  --color-border-default:  var(--palette-neutral-300);
+  --color-border-subtle:   var(--palette-neutral-200);
+  --color-border-strong:   var(--palette-neutral-500);
+  --color-border-brand:    var(--palette-brand-500);
+
+  /* ============================================================
+   * COLOR — pastel tags
+   * ============================================================ */
+  --color-tag-blue:   var(--palette-tag-blue);
+  --color-tag-green:  var(--palette-tag-green);
+  --color-tag-lime:   var(--palette-tag-lime);
+  --color-tag-purple: var(--palette-tag-purple);
+  --color-tag-pink:   var(--palette-tag-pink);
+  --color-tag-peach:  var(--palette-tag-peach);
+
+  /* ============================================================
+   * SPACING — component & layout roles
+   * ============================================================ */
+  --spacing-component-xs: var(--space-1); /*  4px — tight gaps inside atoms */
+  --spacing-component-sm: var(--space-2); /*  8px — default gap between atoms */
+  --spacing-component-md: var(--space-3); /* 12px — padding inside controls */
+  --spacing-component-lg: var(--space-4); /* 16px — card padding */
+
+  --spacing-layout-sm: var(--space-4);    /* 16px — mobile section gap */
+  --spacing-layout-md: var(--space-6);    /* 24px — desktop section gap */
+  --spacing-layout-lg: var(--space-8);    /* 32px — hero spacing */
+
+  /* ============================================================
+   * RADIUS — by component role
+   * ============================================================ */
+  --radius-control: var(--radius-sm);    /*  8px — buttons, inputs */
+  --radius-tag:     var(--radius-md);    /* 12px — chips, segmented control thumb */
+  --radius-card:    var(--radius-lg);    /* 16px — cards, modals */
+  --radius-image:   var(--radius-xl);    /* 20px — media tiles, image containers */
+  --radius-pill:    var(--radius-full);  /* avatars, circular buttons */
+
+  /* ============================================================
+   * SHADOW — by elevation role
+   * ============================================================ */
+  --shadow-card: var(--shadow-card-raw); /* dropdown, floating card */
+}
