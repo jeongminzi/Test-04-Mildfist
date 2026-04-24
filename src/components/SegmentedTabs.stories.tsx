@@ -30,60 +30,58 @@ const meta: Meta<typeof SegmentedTabs> = {
 export default meta;
 type Story = StoryObj<typeof SegmentedTabs>;
 
-export const PillAuth: Story = {
-  render: () => {
-    const [mode, setMode] = useState<"login" | "signup">("login");
-    return (
-      <div className="w-80">
-        <SegmentedTabs
-          variant="pill"
-          tabs={[
-            { value: "login", label: "로그인" },
-            { value: "signup", label: "회원가입" },
-          ]}
-          value={mode}
-          onChange={setMode}
-        />
-      </div>
-    );
-  },
-};
+function PillAuthDemo() {
+  const [mode, setMode] = useState<"login" | "signup">("login");
+  return (
+    <div className="w-80">
+      <SegmentedTabs
+        variant="pill"
+        tabs={[
+          { value: "login", label: "로그인" },
+          { value: "signup", label: "회원가입" },
+        ]}
+        value={mode}
+        onChange={setMode}
+      />
+    </div>
+  );
+}
 
-export const UnderlineSort: Story = {
-  render: () => {
-    const [sort, setSort] = useState<"latest" | "popular">("latest");
-    return (
-      <div className="w-80">
-        <SegmentedTabs
-          variant="underline"
-          tabs={[
-            { value: "latest", label: "최신순" },
-            { value: "popular", label: "인기순" },
-          ]}
-          value={sort}
-          onChange={setSort}
-        />
-      </div>
-    );
-  },
-};
+function UnderlineSortDemo() {
+  const [sort, setSort] = useState<"latest" | "popular">("latest");
+  return (
+    <div className="w-80">
+      <SegmentedTabs
+        variant="underline"
+        tabs={[
+          { value: "latest", label: "최신순" },
+          { value: "popular", label: "인기순" },
+        ]}
+        value={sort}
+        onChange={setSort}
+      />
+    </div>
+  );
+}
 
-export const PillMyPage: Story = {
-  render: () => {
-    const [tab, setTab] = useState<"styles" | "fittings" | "credits">("styles");
-    return (
-      <div className="w-[420px]">
-        <SegmentedTabs
-          variant="pill"
-          tabs={[
-            { value: "styles", label: "내 스타일" },
-            { value: "fittings", label: "피팅 기록" },
-            { value: "credits", label: "크레딧" },
-          ]}
-          value={tab}
-          onChange={setTab}
-        />
-      </div>
-    );
-  },
-};
+function PillMyPageDemo() {
+  const [tab, setTab] = useState<"styles" | "fittings" | "credits">("styles");
+  return (
+    <div className="w-[420px]">
+      <SegmentedTabs
+        variant="pill"
+        tabs={[
+          { value: "styles", label: "내 스타일" },
+          { value: "fittings", label: "피팅 기록" },
+          { value: "credits", label: "크레딧" },
+        ]}
+        value={tab}
+        onChange={setTab}
+      />
+    </div>
+  );
+}
+
+export const PillAuth: Story = { render: () => <PillAuthDemo /> };
+export const UnderlineSort: Story = { render: () => <UnderlineSortDemo /> };
+export const PillMyPage: Story = { render: () => <PillMyPageDemo /> };

@@ -35,21 +35,21 @@ const meta: Meta<typeof UploadDropzone> = {
 export default meta;
 type Story = StoryObj<typeof UploadDropzone>;
 
-export const Empty: Story = {
-  render: () => {
-    const [preview, setPreview] = useState<string | null>(null);
-    return (
-      <div className="w-[340px]">
-        <UploadDropzone
-          label="내 사진 업로드"
-          caption="정면 전신 사진 권장"
-          preview={preview}
-          onFile={(f) => setPreview(URL.createObjectURL(f))}
-        />
-      </div>
-    );
-  },
-};
+function EmptyDemo() {
+  const [preview, setPreview] = useState<string | null>(null);
+  return (
+    <div className="w-[340px]">
+      <UploadDropzone
+        label="내 사진 업로드"
+        caption="정면 전신 사진 권장"
+        preview={preview}
+        onFile={(f) => setPreview(URL.createObjectURL(f))}
+      />
+    </div>
+  );
+}
+
+export const Empty: Story = { render: () => <EmptyDemo /> };
 
 export const WithPreview: Story = {
   render: () => (
